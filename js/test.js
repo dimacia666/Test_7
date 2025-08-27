@@ -1,21 +1,18 @@
-const title = document.querySelector(".title"); // Нахождение элемента 
-const link = document.querySelector(".link"); // Нахождение элемента
-const classTitle = title.classList; // Свойства класса 
+const deleteEv = document.querySelector(".delete");
+const add = document.querySelector(".add");
+const check = document.querySelector(".check");
 
-title.style.color = "red"; // Добавление цвета
-title.style.fontSize = "10px"; // Добавление размера текста
+const btn = () => {
+    console.log("Event listner");
+};
 
-link.classList.add("class", "sharge"); // Добавление класса
-link.classList.remove("class"); // Удаление класса
-link.classList.replace("sharge", "tesla"); // Замена названия класса
+add.addEventListener("click", () => { 
+    check.addEventListener("click", btn);
+    console.log("Add event listner");
+});
 
-link.setAttribute("alt", "ALT"); // Добавить атрибут, значение 
-link.removeAttribute("alt"); // Удаление атрибута 
+deleteEv.addEventListener("click", () => {
+    check.removeEventListener("click", btn);
+    console.log("Delete event listner");
+});
 
-console.log(title.classList); 
-console.log(link.classList); 
-console.log(classTitle);
-console.log(link.hasAttribute("href")); // Узнать есть ли атрибут у элемента 
-console.log(link.hasAttribute("rel"));
-console.log(link.hasAttribute("src"));
-console.log(link.hasAttribute("alt"));
